@@ -13,10 +13,10 @@ def predict_species(sep_len,sep_width,pet_len,pet_width,scaler_path,model_path):
             model = pickle.load(file2)
 
         dct = {
-            'SepalLengthCm':[sep_len],
-            'SepalWidthCm':[sep_width],
-            'PetalLengthCm':[pet_len],
-            'PetalWidthCm':[pet_width]
+            'sepal_length':[sep_len],
+            'sepal_width':[sep_width],
+            'petal_length':[pet_len],
+            'petal_width':[pet_width]
         }
 
         x_new = pd.DataFrame(dct)
@@ -59,7 +59,7 @@ pet_width = st.number_input(
     'Petal Width',
     min_value=0.0,
     step=0.1,
-    value=3.5
+    value=0.2
 )
 
 if st.button('Predict'):
